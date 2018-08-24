@@ -32,5 +32,5 @@ RUN echo "${user}    ALL=(ALL)    ALL" >> etc/sudoers
 COPY /files/resolv.conf /etc/resolv.conf
 
 # 
-RUN sh -c "echo export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/bin" >> /etc/environment
+RUN sh -c "echo export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/" >> /etc/environment
 
