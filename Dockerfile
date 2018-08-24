@@ -1,5 +1,5 @@
 FROM centos:centos7
-LABEL maintainer="mstewart@riotgames.com"
+LABEL maintainer="phil.ruff@gmail.com"
 
 # Install Essentials
 RUN yum update -y && \
@@ -8,7 +8,7 @@ RUN yum update -y && \
 # Install Packages
 RUN yum install -y git && \
     yum install -y wget && \
-	yum install -y java-1.8.0-openjdk && \
+	yum install -y java-1.8.0-openjdk-devel && \
 	yum install -y sudo && \
 	yum clean all
 
@@ -32,5 +32,5 @@ RUN echo "${user}    ALL=(ALL)    ALL" >> etc/sudoers
 COPY /files/resolv.conf /etc/resolv.conf
 
 # 
-RUN chmod +x /usr/lib/jvm/java-8-openjdk-amd64/bin/java
+RUN sh -c "echo export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/bin" >> /etc/environment
 
