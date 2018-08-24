@@ -31,3 +31,6 @@ RUN echo "${user}    ALL=(ALL)    ALL" >> etc/sudoers
 # Set Name Servers
 COPY /files/resolv.conf /etc/resolv.conf
 
+# 
+RUN chmod +x /usr/lib/jvm/java-8-openjdk-amd64/bin/java
+
